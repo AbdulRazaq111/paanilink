@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book a tanker | PaaniLink</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header id="nav" class="nav"></header>
+
+  <main class="container">
+    <div class="page-head">
+      <div>
+        <h1>Book a tanker</h1>
+        <p class="muted">Choose the size, day and time. Subsidised bookings need officer approval.</p>
+      </div>
+    </div>
+
+    <form id="bookForm" class="card form-grid" novalidate>
+      <fieldset class="field full">
+        <legend>Booking type</legend>
+        <div class="check">
+          <input type="radio" id="typeCommercial" name="type" value="commercial" checked>
+          <label for="typeCommercial">Commercial (full rate, no approval needed)</label>
+        </div>
+        <div class="check">
+          <input type="radio" id="typeSubsidised" name="type" value="subsidised">
+          <label for="typeSubsidised">Subsidised (low rate, needs approval)</label>
+        </div>
+        <p id="subsidyHint" class="hint"></p>
+      </fieldset>
+
+      <div class="field">
+        <label for="capacity">Tanker size</label>
+        <select id="capacity" name="capacity"></select>
+      </div>
+      <div class="field">
+        <label for="hydrantId">Hydrant</label>
+        <select id="hydrantId" name="hydrantId"></select>
+      </div>
+      <div class="field">
+        <label for="date">Delivery date</label>
+        <input id="date" name="date" type="date">
+      </div>
+      <div class="field">
+        <label for="slot">Time slot</label>
+        <select id="slot" name="slot"></select>
+      </div>
+      <div class="field full">
+        <label for="address">Delivery address</label>
+        <textarea id="address" name="address" rows="2"></textarea>
+      </div>
+
+      <div class="info-box full" aria-live="polite">
+        <div>Amount to pay: <strong id="amount">-</strong></div>
+        <div id="quotaLine" class="small-text muted"></div>
+      </div>
+
+      <p id="bookError" class="form-error full" role="alert"></p>
+      <div class="actions full">
+        <a class="btn ghost" href="customer.html">Back</a>
+        <button class="btn" type="submit">Confirm booking</button>
+      </div>
+    </form>
+  </main>
+
+  <div id="toast" class="toast-area" aria-live="polite"></div>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/validate.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/customer-book.js"></script>
+</body>
+</html>

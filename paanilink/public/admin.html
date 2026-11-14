@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Administration | PaaniLink</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header id="nav" class="nav"></header>
+
+  <main class="container">
+    <div class="page-head">
+      <div>
+        <h1>Administration</h1>
+        <p class="muted">City-wide reports and master data.</p>
+      </div>
+    </div>
+
+    <div class="tabs" role="tablist">
+      <button class="tab active" type="button" role="tab" aria-selected="true" data-tab="reports">Reports</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" data-tab="zones">Zones</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" data-tab="hydrants">Hydrants</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" data-tab="tankers">Tankers</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" data-tab="rates">Rates</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" data-tab="users">Users</button>
+    </div>
+
+    <section id="tab-reports">
+      <div id="stats" class="stats" aria-label="Summary"></div>
+      <div class="card">
+        <h2>Hydrant quota used today</h2>
+        <div id="quotaReport"></div>
+      </div>
+      <div class="card">
+        <h2>Bookings by status</h2>
+        <div id="statusReport"></div>
+      </div>
+      <div class="card">
+        <h2>Bookings by zone</h2>
+        <div id="zoneReport"></div>
+      </div>
+    </section>
+
+    <section id="tab-zones" class="card" hidden></section>
+    <section id="tab-hydrants" class="card" hidden></section>
+    <section id="tab-tankers" class="card" hidden></section>
+    <section id="tab-rates" class="card" hidden></section>
+    <section id="tab-users" class="card" hidden></section>
+  </main>
+
+  <div id="toast" class="toast-area" aria-live="polite"></div>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/validate.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

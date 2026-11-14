@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dispatch | PaaniLink</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header id="nav" class="nav"></header>
+
+  <main class="container">
+    <div class="page-head">
+      <div>
+        <h1>Dispatch</h1>
+        <p class="muted" id="hydrantLine"></p>
+      </div>
+      <button id="hydrantToggle" class="btn ghost" type="button"></button>
+    </div>
+
+    <section id="stats" class="stats" aria-label="Summary"></section>
+
+    <div class="tabs" role="tablist">
+      <button class="tab active" type="button" role="tab" aria-selected="true" data-tab="assign">To assign</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" data-tab="trips">Trips</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" data-tab="tankers">Tankers</button>
+    </div>
+
+    <section id="tab-assign" class="card"><div id="toAssign"></div></section>
+    <section id="tab-trips" class="card" hidden>
+      <div class="toolbar">
+        <div class="field">
+          <label for="tripDate">Date</label>
+          <input id="tripDate" type="date">
+        </div>
+      </div>
+      <div id="trips"></div>
+    </section>
+    <section id="tab-tankers" class="card" hidden><div id="tankers"></div></section>
+  </main>
+
+  <div id="toast" class="toast-area" aria-live="polite"></div>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/validate.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/operator.js"></script>
+</body>
+</html>

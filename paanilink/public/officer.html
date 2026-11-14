@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zone desk | PaaniLink</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header id="nav" class="nav"></header>
+
+  <main class="container">
+    <div class="page-head">
+      <div>
+        <h1>Zone desk</h1>
+        <p class="muted" id="zoneLine"></p>
+      </div>
+    </div>
+
+    <section id="stats" class="stats" aria-label="Summary"></section>
+
+    <div class="tabs" role="tablist">
+      <button class="tab active" type="button" role="tab" aria-selected="true" data-tab="applications">Subsidy applications</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" data-tab="approvals">Booking approvals</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" data-tab="disputes">Disputes</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" data-tab="all">All zone bookings</button>
+    </div>
+
+    <section id="tab-applications" class="card"><div id="applications"></div></section>
+    <section id="tab-approvals" class="card" hidden><div id="approvals"></div></section>
+    <section id="tab-disputes" class="card" hidden><div id="disputes"></div></section>
+    <section id="tab-all" class="card" hidden>
+      <div class="toolbar">
+        <div class="field">
+          <label for="statusFilter">Status</label>
+          <select id="statusFilter"><option value="">All statuses</option></select>
+        </div>
+        <div class="field">
+          <label for="search">Search customer</label>
+          <input id="search" type="search" placeholder="Name or phone">
+        </div>
+      </div>
+      <p class="hint">View only. Tankers and drivers are assigned by the Hydrant Operator.</p>
+      <div id="allBookings"></div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast-area" aria-live="polite"></div>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/validate.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/officer.js"></script>
+</body>
+</html>

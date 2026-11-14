@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Subsidy | PaaniLink</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header id="nav" class="nav"></header>
+
+  <main class="container">
+    <div class="page-head">
+      <div>
+        <h1>Subsidised status</h1>
+        <p class="muted" id="statusLine"></p>
+      </div>
+    </div>
+
+    <form id="subsidyForm" class="card form-grid" novalidate hidden>
+      <h2 class="full">Apply for subsidised tankers</h2>
+      <div class="field">
+        <label for="category">Applicant type</label>
+        <select id="category" name="category">
+          <option value="">Select...</option>
+          <option>Low income household</option>
+          <option>Hospital</option>
+          <option>Mosque</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="proofType">Proof document</label>
+        <select id="proofType" name="proofType">
+          <option value="">Select...</option>
+          <option>BISP card</option>
+          <option>Zakat certificate</option>
+          <option>Utility bill</option>
+          <option>Registration certificate</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="proofNumber">Document number</label>
+        <input id="proofNumber" name="proofNumber" type="text">
+      </div>
+      <div class="field">
+        <label for="householdSize">People served</label>
+        <input id="householdSize" name="householdSize" type="number" min="1" inputmode="numeric">
+      </div>
+      <div class="field full">
+        <label for="details">Details for the officer</label>
+        <textarea id="details" name="details" rows="3"></textarea>
+      </div>
+      <p id="subsidyError" class="form-error full" role="alert"></p>
+      <div class="actions full">
+        <button class="btn" type="submit">Submit application</button>
+      </div>
+    </form>
+
+    <section class="card">
+      <h2>My applications</h2>
+      <div id="applications"></div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast-area" aria-live="polite"></div>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/validate.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/customer-subsidy.js"></script>
+</body>
+</html>
